@@ -25,7 +25,7 @@ public class UpdateData {
 			System.out.print("Enter the id: ");
 			int id = sc.nextInt();
 			prestm.setInt(2,id);
-			prestm.execute();
+			prestm.executeUpdate();
 			con.close();
 			sc.close();
 			

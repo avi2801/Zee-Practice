@@ -11,6 +11,7 @@ public class Dbinsert {
 			//st.execute("insert into employee values(11,'Darshan',30,25000,'Dev')");
 			//st.execute("insert into employee values (5,'Amit',25,30000,'Clerk')");
 			
+			
 			PreparedStatement prestm = con.prepareStatement("insert into employee values(?,?,?,?,?)");
 			
 			Scanner sc = new Scanner(System.in);
