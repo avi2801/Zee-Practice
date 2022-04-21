@@ -10,7 +10,14 @@ public class Dbdataread {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","Pass@123");
 			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery("Select * from employee");
+			PreparedStatement ps = con.prepareStatement("select * from employee where desig = ?");
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter the desig");
+			String desic = sc.next();
+			ps.setString(1,desic);
+			
+			
+			ResultSet rs = ps.executeQuery();
 			while(rs.next())
 			{
 				System.out.println("Id is "+rs.getInt(1)+": name is "+rs.getString(2));
